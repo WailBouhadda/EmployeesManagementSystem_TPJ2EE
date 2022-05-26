@@ -12,6 +12,10 @@
 
 </head>
 
+<%
+HttpSession s = request.getSession();
+%>
+
 <body>
 	
 	<div id="main">
@@ -23,7 +27,7 @@
 				 <h2>TP etape par etape</h2>
 				 </div>
 				 <div id="logintext">
-				 Se connecter | Déconnexion
+				  <a href="Register.jsp">Creer un compte</a> | <a href="deconnexion">Déconnexion</a>
 				 </div>
 			 </div>
 			 <div id="menubar">
@@ -40,9 +44,9 @@
 			 <p>Veuillez saisir votre Nom d'utilisateur et votre Mot de passe</p>
 			 <form action="Logincontroler" method="post">
 				 <div class="form_settings">
-					 <p><span>Nom d'utilisateur</span><input class="contact" type="text" name="tlogin"value="" /></p>
+					 <p><span>Nom d'utilisateur</span><input class="contact" type="text" name="tlogin"value="" required /></p>
 					 
-					 <p><span>Password</span><input class="contact" type="password" name="tpassword" value=""/></p>
+					 <p><span>Password</span><input class="contact" type="password" name="tpassword" value="" required /></p>
 					 
 					 <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit"name="contact_submitted" value="Se Connecter" /></p>
 				 </div>
@@ -53,7 +57,10 @@
 						 %>
 						 <p style="text-align:center;"><%=request.getAttribute("ERROR") %></p>
 						 <%
-					 }%>
+					 }else if (s.getAttribute("Credential") != null){%>
+					 
+					 	<p style="text-align:center;">* Vous êtes déjà connecté</p>
+					 <%} %>
 			</div>
 		 </div>
 	 </div>

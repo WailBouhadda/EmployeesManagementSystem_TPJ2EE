@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import entities.CredentialsC;
 import tools.MySqlConnection;
@@ -13,6 +14,9 @@ public class CredentialsDAO {
 	public CredentialsDAO() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	static Statement st;
+	static ResultSet rs;
 
 	
 	public static CredentialsC checkcrdentials(String l, String p) {
@@ -58,5 +62,35 @@ public class CredentialsDAO {
 		}
 		return res;
 		}
+	
+	
+	public static int insertNewCredentials(CredentialsC c) {
+		
+		int result = 0;
+		
+		Connection con = MySqlConnection.getConnectionsql();
+
+		if(con != null) {
+			
+			
+			try {
+				
+				st = con.createStatement();
+				st.executeUpdate("Insert into logins values('"+c.getLogin()+"','"+c.getPassword()+"',"+c.getIdemp()+",'Utilisateur','Inactif')");
+				
+				result++;
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				result--;
+			} 
+			
+			
+		}
+		
+		
+		return result;
+	}
 	
 }

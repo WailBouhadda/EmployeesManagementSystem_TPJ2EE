@@ -19,4 +19,24 @@
     <servlet-name>Logincontroler</servlet-name>
     <url-pattern>/Logincontroler</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deconnexion</display-name>
+    <servlet-name>deconnexion</servlet-name>
+    <servlet-class>controlers.deconnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deconnexion</servlet-name>
+    <url-pattern>/deconnexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginManagement</display-name>
+    <servlet-name>LoginManagement</servlet-name>
+    <servlet-class>controlers.LoginManagement</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginManagement</servlet-name>
+    <url-pattern>/LoginManagement</url-pattern>
+  </servlet-mapping>
 </web-app>

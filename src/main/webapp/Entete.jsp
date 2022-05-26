@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
  pageEncoding="ISO-8859-1"%>
+
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,13 +24,14 @@
 					 <h2>TP etape par etape</h2>
 				 </div>
 				 <div id="logintext">
-					 Se connecter | Déconnexion
+					 <a href="Login.jsp">Se connecter</a> | <a href="deconnexion">Déconnexion</a>
 				 </div>
 			 </div>
 			 <div id="menubar">
 				 <ul id="menu">
 					<!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-					 <li class="selected"><a href="index.jsp">Login</a></li>
+					<li class="selected"><a href="index.jsp">Acceuille</a></li>
+					 <li class=""><a href="Login.jsp">Login</a></li>
 					 <li><a href="examples.html">Gérer les employees</a></li>
 					 <li><a href="page.html">Ajouter un employee</a></li>
 					 <li><a href="another_page.html">Afficher le détail</a></li>

@@ -51,13 +51,19 @@ public class Logincontroler extends HttpServlet {
 			
 			
 			s.setAttribute("Credential", CC);
+			
+			s.setAttribute("ERROR",null);
+			
 			response.sendRedirect("index.jsp");
+			
+			
 			
 		}else {
 			
-			request.setAttribute("ERROR","Login ou Mot de passe incorrecte");
 			
+			request.setAttribute("ERROR"," * Login ou Mot de passe incorrecte");
 			request.getRequestDispatcher("Login.jsp").forward(request, response);
+			
 		}
 		
 		
