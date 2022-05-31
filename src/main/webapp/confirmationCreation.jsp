@@ -18,7 +18,7 @@
  <h2>TP etape par etape</h2>
  </div>
  <div >
- <a href="<%=application.getContextPath()%>/Nouveaucompte.jsp" >Créer Compte</a>
+ <a href="<%=application.getContextPath()%>/Register.jsp" >Créer Compte</a>
  </div>
  </div>
  <div id="menubar">

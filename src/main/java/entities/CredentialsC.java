@@ -4,7 +4,7 @@ public class CredentialsC {
 	
 	
 	private int idcredential, idemp;
-	private String login, password, role;
+	private String login, password, role,etat;
 
 	public CredentialsC() {
 		// TODO Auto-generated constructor stub
@@ -51,6 +51,16 @@ public class CredentialsC {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+	public String getEtat() {
+		return etat;
+	}
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
+	
+	
 	
 	
 

@@ -21,7 +21,7 @@
 	 <h2>TP etape par etape</h2>
 	 </div>
 	 <div >
-	 <a href="<%=application.getContextPath()%>/Nouveaucompte.jsp" >Créer Compte</a>
+	 <a href="<%=application.getContextPath()%>/Register.jsp" >Créer Compte</a>
 	 </div>
 	 </div>
 	 <div id="menubar">
@@ -50,9 +50,16 @@
 				
 				 </p>
 			 </div>
-		 </form>
-		 <p><br /><br />NOTE: Votre Compte sera par defaut inactif apres la validation de
-		l'administrateur du systeme</p>
+		 </form>		
+		<% if(request.getAttribute("errocreation") == null){ %>
+		
+			 <p><br /><br />NOTE: Votre Compte sera par defaut inactif apres la validation de l'administrateur du systeme</p>
+		
+		<%}else{ %>
+		
+			<p style="color:red; font-style: italic; font-size:11px;"><br /><br /><%=request.getAttribute("errocreation") %></p>
+		
+		<%} %>
 	 </div>
 	 
 	 <div id="footer">

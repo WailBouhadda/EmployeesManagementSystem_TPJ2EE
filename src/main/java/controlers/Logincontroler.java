@@ -39,27 +39,30 @@ public class Logincontroler extends HttpServlet {
 		
 		String password = request.getParameter("tpassword");
 		
-		CredentialsDAO Cdao = new CredentialsDAO();
 		
 		
-		CredentialsC CC = Cdao.checkcrdentials(username, password);
+		CredentialsC CC = CredentialsDAO.checkcrdentials(username, password);
 		HttpSession s = request.getSession();
 
 		
 		if(CC != null) {
 			
 			
-			
-			s.setAttribute("Credential", CC);
-			
-			s.setAttribute("ERROR",null);
-			
-			response.sendRedirect("index.jsp");
-			
-			
-			
-		}else {
-			
+			 if(!(CC.getEtat().equals("Actif"))){
+					
+					request.setAttribute("ERROR"," Votre compte est "+CC.getEtat()+" Merci de contactez l'administrateur.");
+					request.getRequestDispatcher("Login.jsp").forward(request, response);
+			}else {
+				
+				s.setAttribute("Credential", CC);
+				
+				s.setAttribute("ERROR",null);
+				
+				response.sendRedirect("index.jsp");
+					
+			}
+		
+		}else{
 			
 			request.setAttribute("ERROR"," * Login ou Mot de passe incorrecte");
 			request.getRequestDispatcher("Login.jsp").forward(request, response);
